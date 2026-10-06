@@ -1,0 +1,348 @@
+{
+  "qualitative_benchmarks": [
+    {
+      "dataset_name": "Dataset A (Best Case - Balanced Hierarchy)",
+      "num_passages": 500,
+      "algorithms": {
+        "HAT": {
+          "avg_recall": 1.0,
+          "avg_ndcg": 1.0,
+          "p50_latency_ms": 0.5712998099625111,
+          "p95_latency_ms": 0.5712998099625111,
+          "avg_ops": 508.0,
+          "fallback_rate": 1.0
+        },
+        "Flat_DPR": {
+          "avg_recall": 1.0,
+          "avg_ndcg": 1.0,
+          "p50_latency_ms": 0.22249994799494743,
+          "p95_latency_ms": 0.22249994799494743,
+          "avg_ops": 500.0,
+          "fallback_rate": 0.0
+        },
+        "RAPTOR": {
+          "avg_recall": 1.0,
+          "avg_ndcg": 1.0,
+          "p50_latency_ms": 0.1862999051809311,
+          "p95_latency_ms": 0.1862999051809311,
+          "avg_ops": 56.0,
+          "fallback_rate": 0.0
+        },
+        "HNSW": {
+          "avg_recall": 1.0,
+          "avg_ndcg": 1.0,
+          "p50_latency_ms": 0.29639992862939835,
+          "p95_latency_ms": 0.29639992862939835,
+          "avg_ops": 286.0,
+          "fallback_rate": 0.0
+        }
+      }
+    },
+    {
+      "dataset_name": "Dataset B (Worst Case - Semantic Drift & Path Miss)",
+      "num_passages": 500,
+      "algorithms": {
+        "HAT": {
+          "avg_recall": 1.0,
+          "avg_ndcg": 1.0,
+          "p50_latency_ms": 0.4509999416768551,
+          "p95_latency_ms": 0.4509999416768551,
+          "avg_ops": 508.0,
+          "fallback_rate": 1.0
+        },
+        "Flat_DPR": {
+          "avg_recall": 1.0,
+          "avg_ndcg": 1.0,
+          "p50_latency_ms": 0.23419992066919804,
+          "p95_latency_ms": 0.23419992066919804,
+          "avg_ops": 500.0,
+          "fallback_rate": 0.0
+        },
+        "RAPTOR": {
+          "avg_recall": 0.0,
+          "avg_ndcg": 0.0,
+          "p50_latency_ms": 0.18820003606379032,
+          "p95_latency_ms": 0.18820003606379032,
+          "avg_ops": 55.0,
+          "fallback_rate": 0.0
+        },
+        "HNSW": {
+          "avg_recall": 0.0,
+          "avg_ndcg": 0.0,
+          "p50_latency_ms": 0.34190015867352486,
+          "p95_latency_ms": 0.34190015867352486,
+          "avg_ops": 286.0,
+          "fallback_rate": 0.0
+        }
+      }
+    },
+    {
+      "dataset_name": "Dataset C (Worst Case - Fallback Cascade / Low Confidence)",
+      "num_passages": 500,
+      "algorithms": {
+        "HAT": {
+          "avg_recall": 1.0,
+          "avg_ndcg": 1.0,
+          "p50_latency_ms": 0.4140001256018877,
+          "p95_latency_ms": 0.4140001256018877,
+          "avg_ops": 508.0,
+          "fallback_rate": 1.0
+        },
+        "Flat_DPR": {
+          "avg_recall": 1.0,
+          "avg_ndcg": 1.0,
+          "p50_latency_ms": 0.23650005459785461,
+          "p95_latency_ms": 0.23650005459785461,
+          "avg_ops": 500.0,
+          "fallback_rate": 0.0
+        },
+        "RAPTOR": {
+          "avg_recall": 1.0,
+          "avg_ndcg": 1.0,
+          "p50_latency_ms": 0.15070009976625443,
+          "p95_latency_ms": 0.15070009976625443,
+          "avg_ops": 55.0,
+          "fallback_rate": 0.0
+        },
+        "HNSW": {
+          "avg_recall": 0.0,
+          "avg_ndcg": 0.0,
+          "p50_latency_ms": 0.3170999698340893,
+          "p95_latency_ms": 0.3170999698340893,
+          "avg_ops": 286.0,
+          "fallback_rate": 0.0
+        }
+      }
+    },
+    {
+      "dataset_name": "Dataset D (Worst Case - Degenerate Cluster Skew)",
+      "num_passages": 500,
+      "algorithms": {
+        "HAT": {
+          "avg_recall": 1.0,
+          "avg_ndcg": 1.0,
+          "p50_latency_ms": 0.17939996905624866,
+          "p95_latency_ms": 0.17939996905624866,
+          "avg_ops": 56.0,
+          "fallback_rate": 0.0
+        },
+        "Flat_DPR": {
+          "avg_recall": 1.0,
+          "avg_ndcg": 1.0,
+          "p50_latency_ms": 0.33229985274374485,
+          "p95_latency_ms": 0.33229985274374485,
+          "avg_ops": 500.0,
+          "fallback_rate": 0.0
+        },
+        "RAPTOR": {
+          "avg_recall": 1.0,
+          "avg_ndcg": 1.0,
+          "p50_latency_ms": 0.14479993842542171,
+          "p95_latency_ms": 0.14479993842542171,
+          "avg_ops": 56.0,
+          "fallback_rate": 0.0
+        },
+        "HNSW": {
+          "avg_recall": 1.0,
+          "avg_ndcg": 1.0,
+          "p50_latency_ms": 0.3111001569777727,
+          "p95_latency_ms": 0.3111001569777727,
+          "avg_ops": 286.0,
+          "fallback_rate": 0.0
+        }
+      }
+    }
+  ],
+  "scaling_benchmarks": [
+    {
+      "dataset_name": "Dataset A (Best Case - Balanced Hierarchy)",
+      "num_passages": 1000,
+      "algorithms": {
+        "HAT": {
+          "avg_recall": 1.0,
+          "avg_ndcg": 1.0,
+          "p50_latency_ms": 1.4159998390823603,
+          "p95_latency_ms": 1.4159998390823603,
+          "avg_ops": 1002.0,
+          "fallback_rate": 1.0
+        },
+        "Flat_DPR": {
+          "avg_recall": 1.0,
+          "avg_ndcg": 1.0,
+          "p50_latency_ms": 1.208100002259016,
+          "p95_latency_ms": 1.208100002259016,
+          "avg_ops": 1000.0,
+          "fallback_rate": 0.0
+        },
+        "RAPTOR": {
+          "avg_recall": 1.0,
+          "avg_ndcg": 1.0,
+          "p50_latency_ms": 0.3011999651789665,
+          "p95_latency_ms": 0.3011999651789665,
+          "avg_ops": 66.0,
+          "fallback_rate": 0.0
+        },
+        "HNSW": {
+          "avg_recall": 0.0,
+          "avg_ndcg": 0.0,
+          "p50_latency_ms": 0.5097999237477779,
+          "p95_latency_ms": 0.5097999237477779,
+          "avg_ops": 318.0,
+          "fallback_rate": 0.0
+        }
+      }
+    },
+    {
+      "dataset_name": "Dataset A (Best Case - Balanced Hierarchy)",
+      "num_passages": 2500,
+      "algorithms": {
+        "HAT": {
+          "avg_recall": 1.0,
+          "avg_ndcg": 1.0,
+          "p50_latency_ms": 3.8791000843048096,
+          "p95_latency_ms": 3.8791000843048096,
+          "avg_ops": 2505.0,
+          "fallback_rate": 1.0
+        },
+        "Flat_DPR": {
+          "avg_recall": 1.0,
+          "avg_ndcg": 1.0,
+          "p50_latency_ms": 2.763299969956279,
+          "p95_latency_ms": 2.763299969956279,
+          "avg_ops": 2500.0,
+          "fallback_rate": 0.0
+        },
+        "RAPTOR": {
+          "avg_recall": 0.0,
+          "avg_ndcg": 0.0,
+          "p50_latency_ms": 0.2536999527364969,
+          "p95_latency_ms": 0.2536999527364969,
+          "avg_ops": 77.0,
+          "fallback_rate": 0.0
+        },
+        "HNSW": {
+          "avg_recall": 0.0,
+          "avg_ndcg": 0.0,
+          "p50_latency_ms": 0.6212000735104084,
+          "p95_latency_ms": 0.6212000735104084,
+          "avg_ops": 361.0,
+          "fallback_rate": 0.0
+        }
+      }
+    },
+    {
+      "dataset_name": "Dataset A (Best Case - Balanced Hierarchy)",
+      "num_passages": 5000,
+      "algorithms": {
+        "HAT": {
+          "avg_recall": 1.0,
+          "avg_ndcg": 1.0,
+          "p50_latency_ms": 5.963600007817149,
+          "p95_latency_ms": 5.963600007817149,
+          "avg_ops": 5002.0,
+          "fallback_rate": 1.0
+        },
+        "Flat_DPR": {
+          "avg_recall": 1.0,
+          "avg_ndcg": 1.0,
+          "p50_latency_ms": 5.826800130307674,
+          "p95_latency_ms": 5.826800130307674,
+          "avg_ops": 5000.0,
+          "fallback_rate": 0.0
+        },
+        "RAPTOR": {
+          "avg_recall": 1.0,
+          "avg_ndcg": 1.0,
+          "p50_latency_ms": 0.28980011120438576,
+          "p95_latency_ms": 0.28980011120438576,
+          "avg_ops": 84.0,
+          "fallback_rate": 0.0
+        },
+        "HNSW": {
+          "avg_recall": 0.0,
+          "avg_ndcg": 0.0,
+          "p50_latency_ms": 0.8381002116948366,
+          "p95_latency_ms": 0.8381002116948366,
+          "avg_ops": 393.0,
+          "fallback_rate": 0.0
+        }
+      }
+    },
+    {
+      "dataset_name": "Dataset A (Best Case - Balanced Hierarchy)",
+      "num_passages": 10000,
+      "algorithms": {
+        "HAT": {
+          "avg_recall": 1.0,
+          "avg_ndcg": 1.0,
+          "p50_latency_ms": 13.415600173175335,
+          "p95_latency_ms": 13.415600173175335,
+          "avg_ops": 10003.0,
+          "fallback_rate": 1.0
+        },
+        "Flat_DPR": {
+          "avg_recall": 1.0,
+          "avg_ndcg": 1.0,
+          "p50_latency_ms": 11.381600052118301,
+          "p95_latency_ms": 11.381600052118301,
+          "avg_ops": 10000.0,
+          "fallback_rate": 0.0
+        },
+        "RAPTOR": {
+          "avg_recall": 0.0,
+          "avg_ndcg": 0.0,
+          "p50_latency_ms": 0.3347999881953001,
+          "p95_latency_ms": 0.3347999881953001,
+          "avg_ops": 95.0,
+          "fallback_rate": 0.0
+        },
+        "HNSW": {
+          "avg_recall": 0.0,
+          "avg_ndcg": 0.0,
+          "p50_latency_ms": 0.9059000294655561,
+          "p95_latency_ms": 0.9059000294655561,
+          "avg_ops": 425.0,
+          "fallback_rate": 0.0
+        }
+      }
+    },
+    {
+      "dataset_name": "Dataset A (Best Case - Balanced Hierarchy)",
+      "num_passages": 20000,
+      "algorithms": {
+        "HAT": {
+          "avg_recall": 1.0,
+          "avg_ndcg": 1.0,
+          "p50_latency_ms": 28.447600081562996,
+          "p95_latency_ms": 28.447600081562996,
+          "avg_ops": 20005.0,
+          "fallback_rate": 1.0
+        },
+        "Flat_DPR": {
+          "avg_recall": 1.0,
+          "avg_ndcg": 1.0,
+          "p50_latency_ms": 29.256900073960423,
+          "p95_latency_ms": 29.256900073960423,
+          "avg_ops": 20000.0,
+          "fallback_rate": 0.0
+        },
+        "RAPTOR": {
+          "avg_recall": 1.0,
+          "avg_ndcg": 1.0,
+          "p50_latency_ms": 0.3550001420080662,
+          "p95_latency_ms": 0.3550001420080662,
+          "avg_ops": 101.0,
+          "fallback_rate": 0.0
+        },
+        "HNSW": {
+          "avg_recall": 0.0,
+          "avg_ndcg": 0.0,
+          "p50_latency_ms": 1.3409999664872885,
+          "p95_latency_ms": 1.3409999664872885,
+          "avg_ops": 457.0,
+          "fallback_rate": 0.0
+        }
+      }
+    }
+  ]
+}

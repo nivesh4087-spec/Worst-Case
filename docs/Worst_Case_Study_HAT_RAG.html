@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Worst-Case Performance Study: Hierarchical Abstract Tree (HAT)</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 30px; color: #1e293b; line-height: 1.5; }
+        .header { text-align: center; border-bottom: 3px solid #0284c7; padding-bottom: 15px; margin-bottom: 25px; }
+        h1 { color: #0284c7; font-size: 20px; margin-bottom: 8px; }
+        .meta { font-size: 12px; color: #64748b; margin-bottom: 4px; }
+        .badge { background: #e0f2fe; color: #0369a1; padding: 3px 8px; border-radius: 4px; font-weight: bold; font-size: 11px; }
+        h2 { color: #0f172a; border-left: 4px solid #0284c7; padding-left: 8px; margin-top: 25px; font-size: 16px; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 12px; }
+        th, td { border: 1px solid #cbd5e1; padding: 8px; text-align: left; }
+        th { background-color: #0284c7; color: white; font-weight: bold; }
+        tr:nth-child(even) { background-color: #f8fafc; }
+        .img-container { text-align: center; margin: 20px 0; }
+        .img-container img { max-width: 85%; height: auto; border: 1px solid #e2e8f0; border-radius: 6px; }
+        .caption { font-size: 12px; color: #475569; font-weight: bold; margin-top: 5px; }
+        .box { background: #f0f9ff; border: 1px solid #bae6fd; padding: 12px; border-radius: 6px; margin: 15px 0; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Worst-Case Performance Study & Algorithmic Bounds of HAT in RAG</h1>
+        <div class="meta"><strong>Author:</strong> Nivesh Jain (Roll No: 44) | Vishwakarma Institute of Technology, Pune</div>
+        <div style="margin-top: 8px;"><span class="badge">Repository: github.com/nivesh4087-spec/Worst-Case</span></div>
+    </div>
+    <h2>1. Executive Summary</h2>
+    <p>This empirical and theoretical study evaluates the Worst-Case bounds of Hierarchical Abstract Tree (HAT) in comparison to Best Case, Flat DPR, RAPTOR, and HNSW Graph Search across 4 distinct datasets.</p>
+    <h2>2. Theoretical Complexity Matrix</h2>
+    <table>
+        <tr><th>Algorithm</th><th>Best-Case Time</th><th>Worst-Case Time</th><th>Space</th><th>Worst-Case Quality</th></tr>
+        <tr><td><strong>HAT (Proposed)</strong></td><td>O(B K log N)</td><td>O(B log N + N d)</td><td>O(N d)</td><td>Recall &rarr; 0.20</td></tr>
+        <tr><td><strong>Flat DPR</strong></td><td>O(N d)</td><td>O(N d)</td><td>O(N d)</td><td>Recall &rarr; 1.00</td></tr>
+        <tr><td><strong>RAPTOR</strong></td><td>O(B K log N)</td><td>O(B K log N)</td><td>O(N d L)</td><td>Recall &rarr; 0.00</td></tr>
+        <tr><td><strong>HNSW Graph</strong></td><td>O(log N)</td><td>O(N d)</td><td>O(N M)</td><td>Recall &rarr; 0.60</td></tr>
+    </table>
+    <h2>3. Visual Benchmarks</h2>
+    <div class="img-container"><img src="../plots/1_latency_vs_dataset_size.png"><div class="caption">Figure 1: Latency Scaling vs Corpus Size</div></div>
+    <div class="img-container"><img src="../plots/2_recall_ndcg_comparison.png"><div class="caption">Figure 2: Recall@10 Performance Across Datasets</div></div>
+    <div class="img-container"><img src="../plots/3_operation_count_flops.png"><div class="caption">Figure 3: Vector Similarity Operations (FLOPs)</div></div>
+    <div class="img-container"><img src="../plots/4_tree_depth_degradation.png"><div class="caption">Figure 4: Dynamic Fallback Search Trigger Rate (%)</div></div>
+    <div class="img-container"><img src="../plots/5_tradeoff_radar.png"><div class="caption">Figure 5: Multi-Dimensional Tradeoff Radar</div></div>
+</body>
+</html>
